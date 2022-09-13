@@ -9,7 +9,9 @@ class AppTheme {
   );
 }
 
-class TextTheme {
-  static TextStyle headline = GoogleFonts.rubik(color: Colors.black, fontSize: 40);
-  static TextStyle button = GoogleFonts.varelaRound(color: Colors.white, fontSize: 16, letterSpacing: 1.6);
+class AppTextTheme {
+  static TextStyle headline =
+      GoogleFonts.rubik(color: Colors.black, fontSize: 40);
+  static TextStyle button = GoogleFonts.varelaRound(
+      color: Colors.white, fontSize: 16, letterSpacing: 1.6);
 }

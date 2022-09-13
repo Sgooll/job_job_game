@@ -1,7 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:job_job_game/src/config/theme.dart';
+import 'package:job_job_game/src/core/classes/app.dart';
 import 'package:job_job_game/src/feature/main_menu/main_menu_page.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await App.init();
   runApp(const MyApp());
 }
 
@@ -11,10 +21,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MainMenuPage(),
+      theme: AppTheme.theme,
+      home: MainMenuPage(),
     );
   }
 }
